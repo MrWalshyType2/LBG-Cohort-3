@@ -24,6 +24,15 @@ public class ForLoop {
 			}
 			System.out.print('\n');
 		}
+		
+		// add labels
+		outer: for (int i = 0; i < 5; i++) {
+			// nested loop
+			inner: for (int j = 0; j < 5; j++) {
+				System.out.print('#');
+			}
+			System.out.print('\n');
+		}
 	}
 
 }
