@@ -67,6 +67,14 @@ public class Runner {
 			}
 			System.out.println();
 		}
+		
+		System.out.println("Iterate over 2D array using enhanced for loops");
+		for (int[] row : twoDimensionalArray) {
+			for (int number : row) {
+				System.out.print(number + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }
