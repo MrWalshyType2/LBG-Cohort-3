@@ -47,6 +47,26 @@ public class Runner {
 		for (int number : arrayOfNumbers) {
 			System.out.println(number);
 		}
+		
+		// Arrays can also have multiple dimensions, that is they start to appear like a table
+		System.out.println("2D Array example");
+		int[][] twoDimensionalArray = {
+				{1,  2,  3,  4},
+				{5,  6,  7,  8},
+				{9, 10, 11, 12}
+		};
+		
+		// we can then use nested for loops to iterate over these arrays
+		for (int row = 0; row < twoDimensionalArray.length; row++) {
+			for (int column = 0; column < twoDimensionalArray[row].length; column++) {
+				System.out.print(twoDimensionalArray[row][column]);
+				
+				if (column < twoDimensionalArray[row].length - 1) {
+					System.out.print(", ");
+				}
+			}
+			System.out.println();
+		}
 	}
 
 }
