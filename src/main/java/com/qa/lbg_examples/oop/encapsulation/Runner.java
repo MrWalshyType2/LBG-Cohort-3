@@ -12,7 +12,7 @@ public class Runner {
 		
 		// Encapsulation has two main implementations (agnostic of programming language):
 		// - restricting of access to data/state
-		// - the bundling of state and behaviours that act on that data
+		// - the bundling of state (fields) and behaviours (methods) that act on that data
 		
 		// Java uses a combination of both
 		
