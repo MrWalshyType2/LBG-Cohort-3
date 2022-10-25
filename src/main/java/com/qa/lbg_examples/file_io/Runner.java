@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Runner {
 
@@ -21,7 +25,34 @@ public class Runner {
 //		tryReadWithResources();
 //		writeTextFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\other_text_file.txt", "Hello\nWorld!");
 //		createFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt");
-		writeToFileWithFileOutputStream("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt", "Test\nHello");
+		//writeToFileWithFileOutputStream("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt", "Test\nHello");
+		writeTextUsingPrintWriter();
+	}
+	
+	// Writing with a PrintWriter allows the use of the printf, print and println methods
+	public static void writeTextUsingPrintWriter() {
+		try (PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\print_write_file.txt")))) {
+			pw.printf("Hello %s, a number follows %d", "world", 32);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void appendTextToFile(String filename, String content) {
+		// new FileWriter(filename, appendBoolean)
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File(filename), true))) {
+			writer.append(content);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void writeTextUsingFilesStaticMethod(String filename, String content) {
+		try {
+			Files.write(Path.of(URI.create(filename)), content.getBytes());
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
 	}
 	
 	public static void writeTextFile(String filename, String content) {
