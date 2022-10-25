@@ -2,9 +2,10 @@ package com.qa.lbg_examples.oop.encapsulation;
 
 public class UnencapsulatedQuestion {
 
+	// instance variables (state)
 	public int questionNumber;
 	public String question;
-	public String answer;
+	protected String answer;
 	
 	public UnencapsulatedQuestion(int questionNumber, String question, String answer) {
 		this.questionNumber = questionNumber;
@@ -12,5 +13,6 @@ public class UnencapsulatedQuestion {
 		this.answer = answer;
 	}
 
+	// possibly instance methods that act on the state
 }
 

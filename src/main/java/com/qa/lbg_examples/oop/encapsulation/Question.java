@@ -2,8 +2,11 @@ package com.qa.lbg_examples.oop.encapsulation;
 
 import java.util.Objects;
 
+// this class is immutable (its data cannot be changed)
+// - the inverse of that is a class being mutable
 public class Question {
 
+	// private fields are only accessible in this class
 	private int questionNumber;
 	private String question;
 	private String answer;
@@ -22,6 +25,12 @@ public class Question {
 	public int getQuestionNumber() {
 		return questionNumber;
 	}
+	
+	// Example setter
+//	public void setQuestionNumber(int questionNumber) {
+//		if (questionNumber <= 0) throw new IllegalArgumentException("Question number cannot be less than 1");
+//		this.questionNumber = questionNumber;
+//	}
 
 	public String getQuestion() {
 		return question;
