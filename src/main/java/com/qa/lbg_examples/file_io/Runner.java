@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.RandomAccessFile;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,7 +27,36 @@ public class Runner {
 //		writeTextFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\other_text_file.txt", "Hello\nWorld!");
 //		createFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt");
 		//writeToFileWithFileOutputStream("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt", "Test\nHello");
-		writeTextUsingPrintWriter();
+//		writeTextUsingPrintWriter();
+//		writeToPositionUsingRandomAccessFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt", "Inserted", 32);
+//		readFromPositionUsingRandomAccessFile("C:\\Users\\Morgan Walsh\\eclipse-workspace\\lbg_examples\\src\\main\\java\\com\\qa\\lbg_examples\\file_io\\new_text_file.txt", 16);
+	}
+	
+	// RandomAccessFile can be used for reading from and/or writing to a file at a specific offset (position)
+	public static void writeToPositionUsingRandomAccessFile(String filename, String content, int offset) {
+		try (RandomAccessFile writer = new RandomAccessFile(new File(filename), "rw")) {
+			writer.seek(offset); // go to the specified position in the file
+			writer.write(content.getBytes());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void readFromPositionUsingRandomAccessFile(String filename, int offset) {
+		try (RandomAccessFile reader = new RandomAccessFile(new File(filename), "r")) {
+			reader.seek(offset); // go to the specified position in the file
+			String line = null;
+			
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// Writing with a PrintWriter allows the use of the printf, print and println methods
