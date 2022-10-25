@@ -1,4 +1,4 @@
-package com.qa.lbg_examples.oop.polymorphism;
+package com.qa.lbg_examples.oop.encapsulation;
 
 import java.util.Objects;
 
