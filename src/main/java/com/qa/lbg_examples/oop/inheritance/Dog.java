@@ -2,6 +2,9 @@ package com.qa.lbg_examples.oop.inheritance;
 
 import java.util.Objects;
 
+// extends is used to inherit from a class
+// - Java only supports single-inheritance for classes
+//   i.e., we can only inherit from one class
 public class Dog extends Animal {
 	
 	private String name;

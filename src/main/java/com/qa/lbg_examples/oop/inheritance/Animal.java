@@ -56,7 +56,7 @@ public class Animal {
 	// implementation
 	// - method overriding is runtime polymorphism
 	// - method overriding is also known as dynamic method dispatch
-	@Override
+	@Override // annotation
 	public String toString() {
 		return "Species: " + species + "\nAge: " + age;
 	}
@@ -78,9 +78,10 @@ public class Animal {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Animal other = (Animal) obj;
+		Animal other = (Animal) obj; // typecasting
 		return age == other.age && Objects.equals(classification, other.classification)
 				&& Objects.equals(sex, other.sex) && Objects.equals(species, other.species);
 	}
+	
 	
 }
