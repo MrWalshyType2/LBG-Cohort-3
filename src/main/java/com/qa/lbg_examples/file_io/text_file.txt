@@ -1,5 +1,2 @@
-Hello,
-this is a text file
-with multiple lines
-to be read in with some file
-reader.
+Hello
+World!
