@@ -54,4 +54,32 @@ public class Runner {
 		}
 		System.out.println("Reached here");
 	}
+	
+	public static void catchingMultipleExceptionsExample() {
+		Scanner sc = new Scanner(System.in);
+		int accumulator = 0;
+		boolean isRunning = true;
+		
+		do {
+			System.out.println("Enter 0 to quit, or a number to be accumulated");
+			System.out.print("> ");
+			int input;
+			try {
+				input = sc.nextInt();
+				if (input == 0) isRunning = false;
+				accumulator = accumulator + input;
+			} catch (InputMismatchException ime) {
+				System.out.println("Please enter a valid integer number.");
+				sc.nextLine();
+				// multiple catch blocks can be specified
+				// to handle different exception types that may
+				// be thrown from the same code
+			} catch (Exception e) {
+				System.out.println("Something went wrong...");
+			}
+		} while (isRunning);
+		
+		System.out.println("Accumulated: " + accumulator);
+		System.out.println("Goodbye");
+	}
 }
