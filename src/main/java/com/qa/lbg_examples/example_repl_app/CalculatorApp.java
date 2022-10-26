@@ -7,9 +7,9 @@ public class CalculatorApp {
 	Calculator calculator;
 	Scanner sc;
 
-	public CalculatorApp() {
-		calculator = new Calculator();
-		sc = new Scanner(System.in);
+	public CalculatorApp(Calculator calculator, Scanner sc) {
+		this.calculator = calculator;
+		this.sc = sc;
 	}
 
 	public void start() {
