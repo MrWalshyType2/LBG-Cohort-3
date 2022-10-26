@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 import com.qa.lbg_examples.oop.abstraction.Question;
 
-public abstract class Quiz {
-	
-	public void play() {
+// All methods in an interface are public and abstract
+// by default
+// - from Java 8, we can give methods a default implementation
+//   by using the default keyword in the method header
+// - an interface defines a type, just like a class does
+public interface AlternateQuiz {
+
+	default void play() {
 		Scanner sc = new Scanner(System.in);
 		boolean isPlaying = true;
 		String input = null;
@@ -25,8 +30,8 @@ public abstract class Quiz {
 		} while (isPlaying);
 	}
 	
-	protected abstract Question getQuestion();
+	// has to be default rather than protected, protected is not legal in an interface
+	Question getQuestion();
 	
-	protected abstract boolean checkAnswer(Question question, String answer);
-
+	boolean checkAnswer(Question question, String answer);
 }

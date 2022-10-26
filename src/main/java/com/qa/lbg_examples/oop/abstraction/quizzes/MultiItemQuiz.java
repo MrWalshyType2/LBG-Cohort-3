@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.qa.lbg_examples.oop.abstraction.Question;
 
+// Concrete implementation of the abstract Quiz supertype
 public class MultiItemQuiz extends Quiz {
 
 	private Question[] questions;

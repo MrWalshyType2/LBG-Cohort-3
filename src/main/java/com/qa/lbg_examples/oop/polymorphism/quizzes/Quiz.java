@@ -25,6 +25,14 @@ public class Quiz {
 		} while (isPlaying);
 	}
 	
+	protected Question getQuestion() {
+		throw new RuntimeException("Unimplemented");
+	}
+	
+	protected boolean checkAnswer(Question question, String answer) {
+		throw new RuntimeException("Unimplemented");
+	}
+
 	public void play(int maxRounds) {
 		Scanner sc = new Scanner(System.in);
 		String input = null;
@@ -49,12 +57,4 @@ public class Quiz {
 		System.out.println("Goodbye, you played " + (round - 1) + " rounds.");
 	}
 	
-	protected Question getQuestion() {
-		throw new RuntimeException("Unimplemented");
-	}
-	
-	protected boolean checkAnswer(Question question, String answer) {
-		throw new RuntimeException("Unimplemented");
-	}
-
 }

@@ -2,6 +2,7 @@ package com.qa.lbg_examples.oop.abstraction.quizzes;
 
 import com.qa.lbg_examples.oop.abstraction.Question;
 
+//Concrete implementation of the abstract Quiz supertype
 public class SimpleQuiz extends Quiz {
 	
 	private Question question;
