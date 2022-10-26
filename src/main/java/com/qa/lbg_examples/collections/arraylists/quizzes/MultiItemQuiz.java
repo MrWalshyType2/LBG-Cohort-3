@@ -30,5 +30,11 @@ public class MultiItemQuiz extends Quiz {
 			if (q.equals(question)) return question.checkAnswer(answer);
 		}
 		throw new RuntimeException("Invalid question supplied.");
+		
+		// another way of iterating through a List, used if
+		// you need to manipulate the data
+//		for (int i = 0; i < questions.size(); i++) {
+//			System.out.println(questions.get(i));
+//		}
 	}
 }

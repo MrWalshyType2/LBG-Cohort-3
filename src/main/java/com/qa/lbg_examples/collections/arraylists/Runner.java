@@ -1,6 +1,7 @@
 package com.qa.lbg_examples.collections.arraylists;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.qa.lbg_examples.collections.arraylists.quizzes.MultiItemQuiz;
@@ -17,6 +18,7 @@ public class Runner {
 		// - the type of data the list stores is specified in the angle brackets (a generic type parameter)
 		// - List implementations retain the order that elements were added to the list in
 		List<Question> questions = new ArrayList<>();
+//		questions = new LinkedList<>();
 		
 		// the .add() method is used for adding elements to a List implementation
 		Question q1 = new Question(1, "What goes woof?", "dog");

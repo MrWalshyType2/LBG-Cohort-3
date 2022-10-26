@@ -7,6 +7,7 @@ public class Menu {
 	
 	// A Map stores data using key:value pairs
 	// - the exact data type is a Node<K,V> where K is the data type of the key and V the type of the value
+	// Map<KeyDataType, ValuesDataType>
 	private Map<String, MenuItem> menuItems;
 	
 	public Menu() {
@@ -34,7 +35,7 @@ public class Menu {
 	}
 	
 	public void executeOption(String key, String[] args) {
-		MenuItem item = menuItems.get(key);
+		MenuItem item = menuItems.get(key); // .get() returns null if no matching key exists
 		
 		if (item != null) {
 			item.execute(args);
