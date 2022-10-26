@@ -8,7 +8,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		Quiz simpleQuiz = new SimpleQuiz(new Question(1, "What goes woof?", "dog"));
-		simpleQuiz.play();
+		simpleQuiz.play(3);
 		
 		Quiz multiItemQuiz = new MultiItemQuiz(new Question[] {
 			new Question(1, "What goes woof?", "dog"),

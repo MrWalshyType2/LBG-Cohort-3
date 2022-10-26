@@ -13,7 +13,7 @@ public class MultiItemQuiz extends Quiz {
 		if (questions.length == 0) throw new IllegalArgumentException("Must be at least one question.");
 		this.questions = questions;
 	}
-	
+
 	@Override
 	protected Question getQuestion() {
 		Random random = new Random();
