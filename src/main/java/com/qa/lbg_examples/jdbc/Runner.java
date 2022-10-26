@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+// IMPORTANT: This example depends on the type 4 MySQL driver for the JDBC (Java Database Connectivity) API,
+// - this is provided via the mysql-connector-java dependency in the POM file, sourced from MavenRepository
 public class Runner {
 
 	// IPv4 & IPv6:
