@@ -49,7 +49,7 @@ public class CalculatorApp {
 		return "Invalid input, please try again...";
 	}
 
-	private String executeCommand(String command) {
+	public String executeCommand(String command) {
 		printPrompt("Number 1: ");
 		double num1 = sc.nextDouble();
 		printPrompt("Number 2: ");
