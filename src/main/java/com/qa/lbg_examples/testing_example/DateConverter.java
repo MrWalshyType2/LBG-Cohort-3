@@ -57,9 +57,13 @@ public class DateConverter {
 		if (format.length != 3) throw new IllegalArgumentException("Format not given in expected form, must follow '%%-%%-yyyy' format.");
 		
 		if (format[0].toUpperCase().equals("DD")) {
-			if (format[1].toUpperCase().equals("MM") && format[2].toUpperCase().equals("YYYY")) return "ENGLISH";
+			if (format[1].toUpperCase().equals("MM") && format[2].toUpperCase().equals("YYYY")) {
+				return "ENGLISH";
+			}
 		} else if (format[0].toUpperCase().equals("MM")) {
-			if (format[1].toUpperCase().equals("DD") && format[2].toUpperCase().equals("YYYY")) return "AMERICAN";
+			if (format[1].toUpperCase().equals("DD") && format[2].toUpperCase().equals("YYYY")) {
+				return "AMERICAN";
+			}
 		}
 		return "UNKNOWN";
 	}
