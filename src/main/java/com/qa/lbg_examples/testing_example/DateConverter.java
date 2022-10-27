@@ -19,7 +19,7 @@ public class DateConverter {
 	 */
 	public String toLongDate(String date, String format) {
 		String[] splitDate = date.split("-");
-		if (splitDate.length != 3) throw new IllegalArgumentException("Date not in expected format, must follow '%%-%%-%%' format.");
+		if (splitDate.length != 3) throw new IllegalArgumentException("Date not in expected format, must follow '%%-%%-yyyy' format.");
 		String dateFormatType = identifyDateFormatType(format);
 		
 		try {
@@ -41,14 +41,20 @@ public class DateConverter {
 	
 	/**
 	 * Identifies whether a given date format string is English or American, throws an 
-	 * IllegalArgumentException if not in a 3-part form (%%-%%-%%).
+	 * IllegalArgumentException if not in a 3-part form (%%-%%-yyyy). Accepted formats are 
+	 * as follows:<br><br>
+	 * 
+	 * - dd-mm-yyyy<br>
+	 * - mm-dd-yyyy<br><br>
+	 * 
+	 * Formats are case insensitive, so 'DD-MM-YYYY' would also be valid.
 	 * 
 	 * @param dateFormat
 	 * @return the type of date format: "ENGLISH", "AMERICAN" or "UNKNOWN"
 	 */
 	public String identifyDateFormatType(String dateFormat) {
 		String[] format = dateFormat.split("-");
-		if (format.length != 3) throw new IllegalArgumentException("Format not given in expected form, must follow '%%-%%-%%' format.");
+		if (format.length != 3) throw new IllegalArgumentException("Format not given in expected form, must follow '%%-%%-yyyy' format.");
 		
 		if (format[0].toUpperCase().equals("DD")) {
 			if (format[1].toUpperCase().equals("MM") && format[2].toUpperCase().equals("YYYY")) return "ENGLISH";

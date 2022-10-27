@@ -35,7 +35,7 @@ public class App {
 				output = false;
 				break;
 			default:
-				System.out.println("Invalid command entered, please try again.");
+				System.err.println("Invalid command entered, please try again.");
 			}
 		} catch (IllegalArgumentException e) {
 			System.err.println(e.getMessage());
